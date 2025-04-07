@@ -1,5 +1,4 @@
 import React from "react";
-import Right from "./home/Right/Right";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import { useAuth } from "./context/AuthProvider";
@@ -8,6 +7,8 @@ import Logout from "./home/left1/Logout";
 
 import { Navigate, Route, Routes } from "react-router-dom";
 import Leftp from "./home/left/Leftp";
+import Rightp from "./home/right/Rightp";
+
 function App() {
   const [authUser, setAuthUser] = useAuth();
   console.log(authUser);
@@ -21,7 +22,7 @@ function App() {
               <div className="flex h-screen">
                 <Logout />
                 <Leftp/>
-                <Right />
+                <Rightp/>
               </div>
 
 

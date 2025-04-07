@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
-import Chatuser from "./Chatuser";
-import Messages from "./Messages";
-import Typesend from "./Type";
+import Chatuser from "./Chatuser.jsx";
+import Messages from "./Messages.jsx";
+import Typesend from "./Type.jsx";
 import useConversation from "../../statemanage/useConversation.js";
 import { useAuth } from "../../context/AuthProvider.jsx";
 import { CiMenuFries } from "react-icons/ci";
 
-function Right() {
+function Rightp() {
   const { selectedConversation, setSelectedConversation } = useConversation();
   useEffect(() => {
     return setSelectedConversation(null);
@@ -33,7 +33,7 @@ function Right() {
   );
 }
 
-export default Right;
+export default Rightp;
 
 const NoChatSelected = () => {
   const [authUser] = useAuth();
