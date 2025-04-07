@@ -10,7 +10,7 @@ function Logout() {
  const handleLogout = async () => {
   setLoading(true);
   try {
-    await axios.post("http://localhost:5002/api/user/logout", {}, {
+    await axios.post("/api/user/logout", {}, {
       withCredentials: true,
     });
 
