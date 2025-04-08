@@ -25,7 +25,7 @@ function User({ user }) {
           </div>
         </div>
         <div>
-          <h1 className="user-name">{user.name}</h1>
+          <h1 className="user-name">{user.fullname}</h1>
           <span className="user-email">{user.email}</span>
         </div>
       </div>

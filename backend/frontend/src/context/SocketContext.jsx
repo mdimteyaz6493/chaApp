@@ -13,6 +13,10 @@ export const SocketProvider = ({ children }) => {
   const [onlineUsers, setOnlineUsers] = useState([]);
   const [authUser] = useAuth();
 
+  // useEffect(() => {
+  //   console.log("📡 Received Online Users from socket:", onlineUsers);
+  // }, [onlineUsers]);
+  
   useEffect(() => {
     if (authUser) {
       const socket = io("https://chaapp-re.onrender.com/", {

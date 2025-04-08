@@ -5,12 +5,13 @@ import Typesend from "./Type.jsx";
 import useConversation from "../../statemanage/useConversation.js";
 import { useAuth } from "../../context/AuthProvider.jsx";
 import { CiMenuFries } from "react-icons/ci";
+import { IoMdMenu } from "react-icons/io";
 import { useMenuContext } from "../../context/MenuContext"; // 👈 import menu context
 import "../../styles/rightp.css";
 
 function Rightp() {
   const { selectedConversation, setSelectedConversation } = useConversation();
-  const { openMenu } = useMenuContext(); // 👈 get openMenu
+  const { openMenu, setOpenMenu } = useMenuContext(); // 👈 get openMenu
 
   useEffect(() => {
     return setSelectedConversation(null);
@@ -39,11 +40,12 @@ export default Rightp;
 
 const NoChatSelected = () => {
   const [authUser] = useAuth();
+  const { openMenu, setOpenMenu } = useMenuContext(); // 👈 get openMenu
 
   return (
     <div className="nochat-container">
       <label htmlFor="my-drawer-2" className="menu-button">
-        <CiMenuFries className="menu-icon" />
+        <IoMdMenu className="menu_icon" onClick={() => setOpenMenu(true)} /> {/* 👈 handle click */}
       </label>
       <div className="welcome-message">
         <h1 className="text-center">

@@ -21,10 +21,16 @@
 
 @media only screen and (max-width: 600px) {
   .left-panel {
-    width: 0%;
+    width: 85%;
+    position:absolute;
+    z-index: 1000;
     transition: 0.2s ease-in-out;
+    height: 100vh;
+    transform: translateX(-100%);
+  
   }
   .left-panel.expand {
-    width: 100%; /* Or any width you want when expanded */
+    transform: translateX(0%);
+    left: 15%;
   }
 }

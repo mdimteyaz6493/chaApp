@@ -27,9 +27,15 @@
   @media only screen and (max-width: 600px) {
    
     .logout-container {
-      width: 0%;
+      width: 15%;
+    position:absolute;
+    z-index: 1001;
+    transition: 0.2s ease-in-out;
+    height: 100vh;
+    transform: translateX(-100%);
+    
     }
     .logout-container.show{
-      width: 15%;
+      transform: translateX(0%);
     }
   }

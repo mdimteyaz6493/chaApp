@@ -11,7 +11,7 @@ import Rightp from "./home/right/Rightp";
 
 function App() {
   const [authUser, setAuthUser] = useAuth();
-  console.log(authUser);
+  // console.log(authUser);
   return (
     <>
       <Routes>
