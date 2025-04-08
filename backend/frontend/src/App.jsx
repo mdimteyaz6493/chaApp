@@ -21,12 +21,9 @@ function App() {
             authUser ? (
               <div className="flex h-screen">
                 <Logout />
-                <Leftp/>
-                <Rightp/>
+                <Leftp />
+                <Rightp />
               </div>
-
-
-            
             ) : (
               <Navigate to={"/login"} />
             )
@@ -47,17 +44,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-
- 

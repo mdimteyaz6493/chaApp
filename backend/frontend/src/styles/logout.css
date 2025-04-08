@@ -1,0 +1,35 @@
+.logout-container {
+    width: 4%;
+    background-color: #0f172a; /* Tailwind's bg-slate-950 */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  
+  .logout-button-wrapper {
+    padding: 0.75rem;
+    text-align: center;
+  }
+  
+  .logout-icon {
+    font-size: 3rem; /* text-5xl ≈ 48px */
+    padding: 0.5rem;
+    border-radius: 0.5rem; /* rounded-lg */
+    transition: background-color 0.3s ease;
+  }
+  
+  .logout-icon:hover {
+    background-color: #4b5563; /* Tailwind's hover:bg-gray-600 */
+    cursor: pointer;
+  }
+  
+  @media only screen and (max-width: 600px) {
+   
+    .logout-container {
+      width: 0%;
+    }
+    .logout-container.show{
+      width: 15%;
+    }
+  }

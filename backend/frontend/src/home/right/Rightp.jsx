@@ -5,24 +5,26 @@ import Typesend from "./Type.jsx";
 import useConversation from "../../statemanage/useConversation.js";
 import { useAuth } from "../../context/AuthProvider.jsx";
 import { CiMenuFries } from "react-icons/ci";
+import { useMenuContext } from "../../context/MenuContext"; // 👈 import menu context
+import "../../styles/rightp.css";
 
 function Rightp() {
   const { selectedConversation, setSelectedConversation } = useConversation();
+  const { openMenu } = useMenuContext(); // 👈 get openMenu
+
   useEffect(() => {
     return setSelectedConversation(null);
   }, [setSelectedConversation]);
+
   return (
-    <div className="w-full bg-slate-900 text-gray-300">
+    <div className={`rightp-container ${openMenu ? "hide" : ""}`}> {/* 👈 add class if openMenu is true */}
       <div>
         {!selectedConversation ? (
           <NoChatSelected />
         ) : (
           <>
             <Chatuser />
-            <div
-              className=" flex-1 overflow-y-auto"
-              style={{ maxHeight: "calc(88vh - 8vh)" }}
-            >
+            <div className="messages-wrapper">
               <Messages />
             </div>
             <Typesend />
@@ -37,28 +39,20 @@ export default Rightp;
 
 const NoChatSelected = () => {
   const [authUser] = useAuth();
-  console.log(authUser);
+
   return (
-    <>
-      <div className="relative">
-        <label
-          htmlFor="my-drawer-2"
-          className="btn btn-ghost drawer-button lg:hidden absolute left-5"
-        >
-          <CiMenuFries className="text-white text-xl" />
-        </label>
-        <div className="flex h-screen items-center justify-center">
-          <h1 className="text-center">
-            Welcome{" "}
-            <span className="font-semibold text-xl">
-              {authUser.user.fullname}
-            </span>
-            <br />
-            No chat selected, please start conversation by selecting anyone to
-            your contacts
-          </h1>
-        </div>
+    <div className="nochat-container">
+      <label htmlFor="my-drawer-2" className="menu-button">
+        <CiMenuFries className="menu-icon" />
+      </label>
+      <div className="welcome-message">
+        <h1 className="text-center">
+          Welcome <span className="user-name">{authUser.user.fullname}</span>
+          <br />
+          No chat selected, please start conversation by selecting anyone from
+          your contacts
+        </h1>
       </div>
-    </>
+    </div>
   );
 };

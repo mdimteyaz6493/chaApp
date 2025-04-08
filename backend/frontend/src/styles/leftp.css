@@ -1,0 +1,30 @@
+.left-panel {
+  width: 30%;
+  background-color: black;
+  color: #d1d5db; /* tailwind's text-gray-300 equivalent */
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-heading {
+  font-weight: bold;
+  font-size: 1.875rem; /* equivalent to text-3xl */
+  padding: 0.5rem;
+  padding-left: 2.75rem;
+}
+
+.users-container {
+  flex: 1;
+  overflow-y: auto;
+  min-height: calc(84vh - 10vh);
+}
+
+@media only screen and (max-width: 600px) {
+  .left-panel {
+    width: 0%;
+    transition: 0.2s ease-in-out;
+  }
+  .left-panel.expand {
+    width: 100%; /* Or any width you want when expanded */
+  }
+}

@@ -1,0 +1,20 @@
+.users-container {
+    width: 100%;
+  }
+  
+  .users-header {
+    padding: 0.5rem 2rem;
+    color: white;
+    font-weight: 600;
+    background-color: #1e293b; /* Tailwind's bg-slate-800 */
+    border-radius: 0.375rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .users-list {
+    padding: 0.5rem 0;
+    overflow-y: auto;
+    max-height: calc(84vh - 10vh);
+    flex-grow: 1;
+  }
+  

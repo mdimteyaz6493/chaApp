@@ -1,23 +1,20 @@
 import React from "react";
 import Search from "./Search";
 import Users from "./Users";
- 
+import "../../styles/leftp.css";
+import { useMenuContext } from "../../context/MenuContext"; // 👈 import context
 
 function Leftp() {
+  const { openMenu } = useMenuContext(); // 👈 get openMenu from context
+
   return (
-    <div className="w-[30%] bg-black text-gray-300">
-      <h1 className="font-bold text-3xl p-2 px-11">Chats</h1>
-    {/* <div className="w-full   bg-black text-gray-300"> */}
+    <div className={`left-panel ${openMenu ? "expand" : ""}`}> {/* 👈 conditionally add class */}
+      <h1 className="chat-heading">Chats</h1>
       <Search />
-      <div
-        className=" flex-1  overflow-y-auto"
-        style={{ minHeight: "calc(84vh - 10vh)" }}
-      >
+      <div className="users-container">
         <Users />
       </div>
-   
     </div>
-  
   );
 }
 

@@ -1,0 +1,53 @@
+.rightp-container {
+    width: 100%;
+    background-color: #0f172a; /* slate-900 */
+    color: #d1d5db; /* gray-300 */
+  }
+  
+  .messages-wrapper {
+    flex: 1;
+    overflow-y: auto;
+    max-height: calc(88vh - 8vh);
+  }
+  
+  .nochat-container {
+    position: relative;
+  }
+  
+  .menu-button {
+    position: absolute;
+    left: 1.25rem; /* same as left-5 */
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .menu-icon {
+    color: #ffffff;
+    font-size: 1.25rem; /* text-xl */
+  }
+  
+  .welcome-message {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    text-align: center;
+  }
+  
+  .user-name {
+    font-weight: 600;
+    font-size: 1.25rem;
+  }
+  
+  @media only screen and (max-width: 600px) {
+   
+    .rightp-container{
+      width: 100%;
+      /* transition: 0.2s ease-in-out; */
+    }
+    .rightp-container.hide{
+      display: none;
+    }
+  }
