@@ -30,15 +30,29 @@
   .welcome-message {
     height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 0 1rem;
     text-align: center;
   }
-  
-  .user-name {
+  .welcome-message .msg-icon{
+   height: 250px;
+  }
+  .welcome-message h1{
+    font-size: 3rem;
+  }
+  .welcome-message .user-name {
     font-weight: 600;
     font-size: 1.25rem;
+    font-size: 3rem;
+    text-transform: capitalize;
+    color: #fd8f01;
+    opacity: 1;
+  }
+  .welcome-message span{
+    font-size: 1.2rem;
+    opacity: 0.3;
   }
   
   @media only screen and (max-width: 600px) {
@@ -49,5 +63,24 @@
     }
     .rightp-container.hide{
       display: none;
+    }
+    .welcome-message .msg-icon{
+      height: 200px;
+     }
+     .welcome-message h1{
+       font-size: 2rem;
+       margin-top: 20px
+     }
+     .welcome-message .user-name {
+       font-weight: 600;
+       font-size: 2rem;
+       opacity: 1;
+       
+     }
+
+     .welcome-message span{
+      font-size: 1rem;
+      opacity: 0.3;
+      margin-top: 10px;
     }
   }
