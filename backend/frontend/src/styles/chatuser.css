@@ -10,7 +10,7 @@
   }
  .menu_icon{
   display: none;
-  font-size: 2rem;
+  font-size: 1.3rem;
  }
   .chatuser-container:hover {
     background-color: #4b5563; /* hover:bg-gray-600 */

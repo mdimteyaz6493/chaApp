@@ -4,6 +4,8 @@ import { useSocketContext } from "../../context/SocketContext.jsx";
 import { IoMdMenu } from "react-icons/io";
 import "../../styles/chatuser.css";
 import { useMenuContext } from "../../context/MenuContext";
+import { FaArrowLeft } from "react-icons/fa";
+
 
 function getInitials(name) {
   if (!name) return "";
@@ -41,7 +43,7 @@ function Chatuser() {
 
   return (
     <div className="chatuser-container">
-      <IoMdMenu className="menu_icon" onClick={() => setOpenMenu(true)} />
+      <FaArrowLeft className="menu_icon" onClick={() => setOpenMenu(true)} />
 
       <div>
         <div className={`avatar ${status === "Online" ? "online" : ""}`}>
