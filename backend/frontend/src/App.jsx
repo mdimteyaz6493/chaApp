@@ -3,11 +3,11 @@ import Signup from "./components/Signup";
 import Login from "./components/Login";
 import { useAuth } from "./context/AuthProvider";
 import { Toaster } from "react-hot-toast";
-import Logout from "./home/left1/Logout";
 
 import { Navigate, Route, Routes } from "react-router-dom";
 import Leftp from "./home/left/Leftp";
 import Rightp from "./home/right/Rightp";
+import "./App.css"
 
 function App() {
   const [authUser, setAuthUser] = useAuth();
@@ -20,7 +20,6 @@ function App() {
           element={
             authUser ? (
               <div className="flex h-screen">
-                <Logout />
                 <Leftp />
                 <Rightp />
               </div>

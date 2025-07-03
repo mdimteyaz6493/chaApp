@@ -5,6 +5,13 @@ import { IoMdMenu } from "react-icons/io";
 import "../../styles/chatuser.css";
 import { useMenuContext } from "../../context/MenuContext";
 
+function getInitials(name) {
+  if (!name) return "";
+  const words = name.trim().split(" ");
+  if (words.length === 1) return words[0][0].toUpperCase();
+  return words[0][0].toUpperCase() + words[1][0].toUpperCase();
+}
+
 function Chatuser() {
   const { selectedConversation } = useConversation();
   const { onlineUsers } = useSocketContext();
@@ -30,6 +37,8 @@ function Chatuser() {
 
   const status = getOnlineUsersStatus(selectedConversation._id);
 
+  const initials = getInitials(selectedConversation.fullname);
+
   return (
     <div className="chatuser-container">
       <IoMdMenu className="menu_icon" onClick={() => setOpenMenu(true)} />
@@ -37,10 +46,9 @@ function Chatuser() {
       <div>
         <div className={`avatar ${status === "Online" ? "online" : ""}`}>
           <div className="avatar-img-wrapper">
-            <img
-              src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-              alt="profile"
-            />
+          <div className="avatar-initials">
+           <span> {initials}</span>
+          </div>
           </div>
         </div>
       </div>

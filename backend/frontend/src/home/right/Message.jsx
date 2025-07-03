@@ -1,27 +1,90 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+
+
+function getInitials(name) {
+  if (!name) return "";
+  const words = name.trim().split(" ");
+  if (words.length === 1) return words[0][0].toUpperCase();
+  return words[0][0].toUpperCase() + words[1][0].toUpperCase();
+}
 
 function Message({ message }) {
+  const [showOptions, setShowOptions] = useState(false);
+
   const authUser = JSON.parse(localStorage.getItem("ChatApp"));
   const itsMe = message.senderId === authUser.user._id;
 
-  const chatName = itsMe ? " chat-end" : "chat-start";
-  const chatColor = itsMe ? "bg-blue-500" : "";
+  const chatName = itsMe ? "chat-end" : "chat-start";
+  const chatColor = itsMe ? "bg-blue-500" : "bg-gray-600";
 
   const createdAt = new Date(message.createdAt);
   const formattedTime = createdAt.toLocaleTimeString([], {
     hour: "2-digit",
     minute: "2-digit",
   });
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(message.message);
+    setShowOptions(false);
+  };
+
+  useEffect(() => {
+  fetch(`http://localhost:3001/api/user/${message.senderId}`)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("Sender User:", data); // ✅ YAHAN USER DEKH SAKTE HO
+      setSenderName(data.fullname);
+    })
+    .catch((err) => console.error("Error fetching user:", err));
+}, [message.senderId]);
+
+  async function fetchSenderDetails(senderId) {
+  const res = await fetch(`http://localhost:3001/api/user/${senderId}`);
+  const data = await res.json();
+  return data; // assume data.fullname milta hai
+}
+
+
   return (
-    <div>
-      <div className="p-4">
-        <div className={`chat ${chatName}`}>
+    <div
+      className="p-4 relative group"
+      onClick={() => setShowOptions(!showOptions)}
+    >
+      <div className={`chat ${chatName}`}>
+        {!itsMe && (
+          <div className="avatar-img-wrapper mr-2">
+            <div className="avatar-initials bg-purple-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-semibold">
+              <span>{getInitials(message.sender?.fullname)}</span>
+            </div>
+          </div>
+        )}
+
+        <div>
           <div className={`chat-bubble text-white ${chatColor}`}>
             {message.message}
           </div>
-          <div className="chat-footer">{formattedTime}</div>
+          <div className="chat-footer text-xs text-gray-300">
+            {formattedTime}
+          </div>
         </div>
       </div>
+
+      {showOptions && (
+        <div className="absolute right-4 top-2 bg-white border shadow-lg rounded-md z-10">
+          <button
+            className="px-4 py-2 text-sm hover:bg-gray-100 w-full text-left"
+            onClick={handleCopy}
+          >
+            Copy
+          </button>
+          <button
+            className="px-4 py-2 text-sm hover:bg-gray-100 w-full text-left"
+            onClick={() => alert("Share coming soon")}
+          >
+            Share
+          </button>
+        </div>
+      )}
     </div>
   );
 }

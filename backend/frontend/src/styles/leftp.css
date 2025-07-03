@@ -5,18 +5,28 @@
   display: flex;
   flex-direction: column;
 }
+.left-panel .left_head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+
+}
+.left-panel .left_head .logout-icon{
+  font-size: 1.25rem;
+}
 
 .chat-heading {
-  font-weight: bold;
+  font-weight: 500;
   font-size: 1.875rem; /* equivalent to text-3xl */
   padding: 0.5rem;
-  padding-left: 2.75rem;
 }
 
 .users-container {
   flex: 1;
   overflow-y: auto;
   min-height: calc(84vh - 10vh);
+  width: 100%;
 }
 
 @media only screen and (max-width: 600px) {

@@ -1,9 +1,9 @@
 
 .chatuser-container {
     padding-left: 1.25rem; /* pl-5 */
-    padding-top: 1.25rem;  /* pt-5 */
-    height: 12vh;
+    height: 10vh;
     display: flex;
+    align-items: center;
     gap: 1rem; /* space-x-4 */
     background-color: #374151; /* bg-gray-700 */
     transition: background-color 0.3s ease;
@@ -22,10 +22,6 @@
     overflow: hidden;
   }
   
-  .avatar-img-wrapper img {
-    width: 100%;
-    height: auto;
-  }
   
   .chatuser-details {
     display: flex;

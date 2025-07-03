@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaSearch } from "react-icons/fa";
+import { CiSearch } from "react-icons/ci";
 import useGetAllUsers from "../../context/useGetAllUsers";
 import useConversation from "../../statemanage/useConversation";
 import toast from "react-hot-toast";
@@ -39,7 +39,7 @@ function Search() {
               />
             </label>
             <button type="submit" className="search-button">
-              <FaSearch className="search-icon" />
+              <CiSearch  className="search-icon" />
             </button>
           </div>
         </form>

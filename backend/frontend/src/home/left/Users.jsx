@@ -2,6 +2,7 @@ import React from "react";
 import User from "./User";
 import useGetAllUsers from "../../context/useGetAllUsers";
 import { useMenuContext } from "../../context/MenuContext"; // 👈 Import context
+import "../../styles/users.css"
 
 function Users() {
   const [allUsers] = useGetAllUsers();
@@ -13,8 +14,7 @@ function Users() {
 
   return (
     <div>
-      <h1 className="px-4 py-2 text-white font-semibold">Messages</h1>
-      <div className="overflow-y-auto" style={{ maxHeight: "80vh" }}>
+      <div className="user_cont">
         {allUsers.map((user, i) => (
           <div key={i} onClick={handleUserClick}> {/* 👈 Add click handler */}
             <User user={user} />
