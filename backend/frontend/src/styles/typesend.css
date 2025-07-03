@@ -36,4 +36,29 @@ align-items: center;
     cursor: pointer;
   
   }
+  @media (max-width:600px) {
+    .typesend-container {
+    gap: 0.1rem; /* space-x-1 */
+    padding: 10px;
+  }
+    .typesend-input-wrapper {
+    width: 90%;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+    .send_btn{
+background-color: #24252a;
+height:50px;
+width: 50px;
+border-radius: 0.75rem;
+display: flex;
+justify-content: center;
+align-items: center;
+  }
+  .send-icon {
+    font-size: 1.75rem; /* text-3xl */
+    color: #fff;
+    cursor: pointer;
   
+  }
+  }

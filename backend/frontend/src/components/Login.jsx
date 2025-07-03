@@ -116,7 +116,6 @@ function Login() {
           />
         </div>
 
-        <hr style={{width:"100%",height:"5px", margin:"20px 0",opacity:"0.2"}}/>
         <p className="signup-text">
           Don't have an account?
           <Link to="/signup" className="signup-link">

@@ -47,7 +47,7 @@ const NoChatSelected = () => {
   return (
     <div className="nochat-container">
       <label htmlFor="my-drawer-2" className="menu-button">
-        <IoMdMenu className="menu_icon" onClick={() => setOpenMenu(true)} /> {/* 👈 handle click */}
+        <IoMdMenu className="menu_icon" onClick={() => setOpenMenu(true)} style={{fontSize:"1.8rem"}}/> {/* 👈 handle click */}
       </label>
       
       <div className="welcome-message">

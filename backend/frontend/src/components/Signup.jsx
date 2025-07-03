@@ -161,10 +161,10 @@ function Signup() {
         <div>
           <input type="submit" value="Signup" className="signup-button" />
         </div>
-        <hr style={{width:"100%",height:"5px", margin:"20px 0",opacity:"0.2"}}/>
-        <p className="signup-link">
+   
+        <p className="login-text">
           Have an account?
-          <Link to="/login">Login</Link>
+          <Link to="/login" className="login-link">Login</Link>
         </p>
       </form>
     </div>

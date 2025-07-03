@@ -11,6 +11,7 @@ function getInitials(name) {
 
 function Message({ message }) {
   const [showOptions, setShowOptions] = useState(false);
+  const [senderName, setsenderName] = useState("")
 
   const authUser = JSON.parse(localStorage.getItem("ChatApp"));
   const itsMe = message.senderId === authUser.user._id;
@@ -30,16 +31,16 @@ function Message({ message }) {
   };
 
 useEffect(() => {
-  console.log("Sender ID:", message.senderId); // ✅ Sender ID yaha console hoga
+  // console.log("Sender ID:", message.senderId); // ✅ Sender ID yaha console hoga
 
   fetch(`http://localhost:3001/api/user/info/${message.senderId}`)
     .then((res) => res.json())
     .then((data) => {
-      console.log("Sender User:", data); // ✅ Yahan user details console hongi
-      setSenderName(data.fullname);
+      // console.log("Sender User:", data); // ✅ Yahan user details console hongi
+      setsenderName(data.fullname);
     })
     .catch((err) => console.error("Error fetching user:", err));
-}, []);
+}, [message.senderId]);
 
 
   async function fetchSenderDetails(senderId) {
@@ -58,7 +59,7 @@ useEffect(() => {
         {!itsMe && (
           <div className="avatar-img-wrapper mr-2">
             <div className="avatar-initials">
-              <span>{getInitials("Imteyaz")}</span>
+              <span>{getInitials(senderName)}</span>
             </div>
           </div>
         )}

@@ -27,6 +27,8 @@ function Messages() {
     }, 100);
   }, [messages]);
 
+  
+
   // Group messages by date
   const groupMessagesByDate = (messages) => {
     const groups = {};
