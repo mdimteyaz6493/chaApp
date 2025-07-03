@@ -14,6 +14,6 @@ router.post("/signup", signup);
 router.post("/login", login);
 router.post("/logout", logout);
 router.get("/allusers", secureRoute, allUsers);
-router.get("/user/:id",getUserById); // ✅ added this line
+router.get("/info/:id",getUserById); // ✅ added this line
 
 export default router;

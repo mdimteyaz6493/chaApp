@@ -29,15 +29,18 @@ function Message({ message }) {
     setShowOptions(false);
   };
 
-  useEffect(() => {
-  fetch(`http://localhost:3001/api/user/${message.senderId}`)
+useEffect(() => {
+  console.log("Sender ID:", message.senderId); // ✅ Sender ID yaha console hoga
+
+  fetch(`http://localhost:3001/api/user/info/${message.senderId}`)
     .then((res) => res.json())
     .then((data) => {
-      console.log("Sender User:", data); // ✅ YAHAN USER DEKH SAKTE HO
+      console.log("Sender User:", data); // ✅ Yahan user details console hongi
       setSenderName(data.fullname);
     })
     .catch((err) => console.error("Error fetching user:", err));
-}, [message.senderId]);
+}, []);
+
 
   async function fetchSenderDetails(senderId) {
   const res = await fetch(`http://localhost:3001/api/user/${senderId}`);
@@ -54,8 +57,8 @@ function Message({ message }) {
       <div className={`chat ${chatName}`}>
         {!itsMe && (
           <div className="avatar-img-wrapper mr-2">
-            <div className="avatar-initials bg-purple-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-semibold">
-              <span>{getInitials(message.sender?.fullname)}</span>
+            <div className="avatar-initials">
+              <span>{getInitials("Imteyaz")}</span>
             </div>
           </div>
         )}
@@ -64,7 +67,7 @@ function Message({ message }) {
           <div className={`chat-bubble text-white ${chatColor} shadow-md`}>
             {message.message}
           </div>
-          <div className="chat-footer text-xs text-gray-300">
+          <div className="chat-footer text-xs text-gray-300 my-2">
             {formattedTime}
           </div>
         </div>

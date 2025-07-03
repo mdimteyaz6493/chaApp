@@ -1,8 +1,11 @@
   
   .avatar-img-wrapper {
-    width: 3.5rem; /* w-14 */
+   height: 50px;
+   width: 50px; /* w-14 */
     border-radius: 9999px; /* rounded-full */
     overflow: hidden;
+    background-color: #7f79fb;
+    color: white;
   }
   .avatar-img-wrapper .avatar-initials {
   width: 100%;
