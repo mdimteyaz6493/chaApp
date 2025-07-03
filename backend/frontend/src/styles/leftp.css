@@ -1,9 +1,10 @@
 .left-panel {
   width: 30%;
-  background-color: black;
-  color: #d1d5db; /* tailwind's text-gray-300 equivalent */
+  background-color:#1a1b20;
+  color: #ffffff; /* tailwind's text-gray-300 equivalent */
   display: flex;
   flex-direction: column;
+  border-right: 1px solid #313239;
 }
 .left-panel .left_head{
   display: flex;

@@ -5,16 +5,15 @@
     display: flex;
     align-items: center;
     gap: 1rem; /* space-x-4 */
-    background-color: #374151; /* bg-gray-700 */
+    background-color:#1a1b20; /* bg-gray-700 */
     transition: background-color 0.3s ease;
+    border-bottom: 1px solid #313239;
   }
  .menu_icon{
   display: none;
   font-size: 1.3rem;
  }
-  .chatuser-container:hover {
-    background-color: #4b5563; /* hover:bg-gray-600 */
-  }
+
   
   .avatar-img-wrapper {
     width: 3.5rem; /* w-14 */

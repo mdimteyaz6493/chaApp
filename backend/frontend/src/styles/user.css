@@ -7,11 +7,11 @@
   }
   
   .user-wrapper:hover {
-    background-color: #475569; /* Tailwind's hover:bg-slate-600 */
+    background-color:#22252c; /* Tailwind's hover:bg-slate-600 */
   }
   
   .user-wrapper.selected {
-    background-color: #334155; /* Tailwind's bg-slate-700 */
+    background-color: #22252c; /* Tailwind's bg-slate-700 */
   }
   
   .user-content {

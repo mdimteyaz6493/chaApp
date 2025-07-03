@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "../../App.css"
 
 
 function getInitials(name) {
@@ -15,7 +16,7 @@ function Message({ message }) {
   const itsMe = message.senderId === authUser.user._id;
 
   const chatName = itsMe ? "chat-end" : "chat-start";
-  const chatColor = itsMe ? "bg-blue-500" : "bg-gray-600";
+  const chatColor = itsMe ? "bg-blue-600" : "#1f2025";
 
   const createdAt = new Date(message.createdAt);
   const formattedTime = createdAt.toLocaleTimeString([], {
@@ -60,7 +61,7 @@ function Message({ message }) {
         )}
 
         <div>
-          <div className={`chat-bubble text-white ${chatColor}`}>
+          <div className={`chat-bubble text-white ${chatColor} shadow-md`}>
             {message.message}
           </div>
           <div className="chat-footer text-xs text-gray-300">

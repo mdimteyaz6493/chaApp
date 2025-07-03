@@ -2,7 +2,7 @@
     display: flex;
     gap: 0.25rem; /* space-x-1 */
     height: 10vh;
-    background-color: #1f2937; /* bg-gray-800 */
+     background-color:#1a1b20;
     align-items: center;
   }
   
@@ -15,16 +15,25 @@
   .typesend-input {
     width: 100%;
     padding: 0.75rem;
-    border: 1px solid #374151; /* border-gray-700 */
+    border: 1px solid #3f3f3f; /* border-gray-700 */
     border-radius: 0.75rem;
-    background-color: #0f172a; /* bg-slate-900 */
+    background-color:#24252a; /* bg-slate-900 */
     color: #fff;
     outline: none;
   }
-  
+  .send_btn{
+background-color: #24252a;
+height:50px;
+width: 50px;
+border-radius: 0.75rem;
+display: flex;
+justify-content: center;
+align-items: center;
+  }
   .send-icon {
     font-size: 1.75rem; /* text-3xl */
     color: #fff;
     cursor: pointer;
+  
   }
   

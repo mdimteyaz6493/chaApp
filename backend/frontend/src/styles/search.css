@@ -14,8 +14,8 @@
   .search-form {
     display: flex;
     gap: 0.75rem;
-    background-color: #1e293b; /* Tailwind's bg-slate-900 */
-    border: 1px solid #374151; /* Tailwind's border-gray-700 */
+    background-color:#24252a; /* Tailwind's bg-slate-900 */
+    border: 1px solid #3f3f3f; /* Tailwind's border-gray-700 */
     border-radius: 0.5rem;
   }
   

@@ -25,7 +25,7 @@ function Typesend() {
             className="typesend-input"
           />
         </div>
-        <button>
+        <button className="send_btn">
           <IoSend className="send-icon" />
         </button>
       </div>
