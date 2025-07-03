@@ -2,7 +2,6 @@ import express from "express";
 import {
   getMessage,
   sendMessage,
-  deleteMessage, // import this
 } from "../controller/message.controller.js";
 import secureRoute from "../middleware/secureRoute.js";
 
